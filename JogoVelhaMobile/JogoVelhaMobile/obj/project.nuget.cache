@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MHgYVZMmoMVKeIQlvyY8MCe2A6h7/Zhq5lM3NcVriXeao0KhH7h+vg+D5+hNcnKgEmR51jjjw88h5T1Gty7XEA==",
+  "dgSpecHash": "0pZrhbgX6tesug+Ld7auOUPOPAILaU0kWEByn9TRzJTR/jdAu0pnWGAx0+7Qyo8AqJuSaX86ojYlmb/u8jMpUA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.csproj",
+  "projectFilePath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlnote15\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

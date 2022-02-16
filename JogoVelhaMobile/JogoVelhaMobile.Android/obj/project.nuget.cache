@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CsyzOmj5n7yg5jZglIEYXMNVXCbNQtyw6dn8NByum85QAR4rIUBHrm3Dqnt/MDBYtdhlDR84HESkjKtj1rs71Q==",
+  "dgSpecHash": "fKnMpLrUkW9pm6ionbiZuufVqONPOvdwF205Bunjq6TiKsWyZ6pVq0vQog2Qe2QzA94H5ct92cG4J5/Z1Qd82g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.Android\\JogoVelhaMobile.Android.csproj",
+  "projectFilePath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.Android\\JogoVelhaMobile.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlnote15\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
     "C:\\Users\\vlnote15\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",

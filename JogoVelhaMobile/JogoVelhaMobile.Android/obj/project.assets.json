@@ -2383,11 +2383,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.Android\\JogoVelhaMobile.Android.csproj",
+      "projectUniqueName": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.Android\\JogoVelhaMobile.Android.csproj",
       "projectName": "JogoVelhaMobile.Android",
-      "projectPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.Android\\JogoVelhaMobile.Android.csproj",
+      "projectPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.Android\\JogoVelhaMobile.Android.csproj",
       "packagesPath": "C:\\Users\\vlnote15\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.Android\\obj\\",
+      "outputPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2408,8 +2408,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.csproj": {
-              "projectPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.csproj"
+            "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.csproj": {
+              "projectPath": "C:\\Users\\vlnote15\\Desktop\\Guilherme\\JogoDaVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile\\JogoVelhaMobile.csproj"
             }
           }
         }
