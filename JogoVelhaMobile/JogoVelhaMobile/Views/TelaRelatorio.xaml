@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="JogoDaVelhaXamarin.Views.TelaRelatorio" BackgroundColor="#f5f3f4">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh" Command="{Binding AtualizarPartidas}" IconImageSource="refresh" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal">
+        <RefreshView IsRefreshing="{Binding EstaAtualizando, Mode=OneWay}" Command="{Binding AtualizarPartidas}">
+            <ListView ItemsSource="{Binding ListaPartidas}">
+                    <ListView.Header>
+                        <Grid ColumnDefinitions="*,*,*" RowDefinitions="auto">
+                            <Label Grid.Row="0" Grid.Column="0" Text="Id" TextColor="#184e77" Padding="10" FontSize="Medium"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Vencedor" TextColor="#184e77" Padding="10" FontSize="Medium"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="Data" TextColor="#184e77" Padding="10" FontSize="Medium"/>
+                        </Grid>
+                    </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                            <ViewCell>
+                                <Grid RowDefinitions="Auto" ColumnDefinitions="*,*,*">
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Id}" Padding="10" TextColor="#2196F3" FontSize="Body"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Ganhador}"  TextColor="#2196F3" FontSize="Body"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding Data, StringFormat='{}{0:dd/MM/yyyy}'}" Padding="0,0,-20,0" TextColor="#2196F3" FontSize="Body"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

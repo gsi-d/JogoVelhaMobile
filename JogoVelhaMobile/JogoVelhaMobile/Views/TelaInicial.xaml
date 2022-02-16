@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JogoVelhaMobile.Views.TelaInicial" BackgroundColor="#c5ddf6">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Image Source="logo" Margin="5,30,5,-65" BackgroundColor="Transparent"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="400"/>
+            </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Fill="ghostWhite"
+                    WidthRequest="380" RadiusX="20" RadiusY="20"
+                    HeightRequest="500"
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="-15"/>
+                
+                <Label Text="Escolha uma opção:" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="Center" FontSize="28" Grid.Row="0" Grid.ColumnSpan="4" />
+                <Label Text="OU" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="25" Grid.Row="1" Grid.ColumnSpan="4" />
+                <Button Text="Multiplayer" Clicked="ButtonMultiplayer" HorizontalOptions="Center" Grid.Row="1" Padding="20,0" Grid.ColumnSpan="2" BackgroundColor="#ff4040" CornerRadius="15"/>
+                <Button Text="Contra o Robô" Clicked="ButtonIA" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="Center" Padding="10" BackgroundColor="#2196F3" CornerRadius="15"/>
+                <Image Source="jogodavelha" Aspect="AspectFit" Margin="50" HorizontalOptions="Center" Grid.Row="2" Grid.ColumnSpan="4"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

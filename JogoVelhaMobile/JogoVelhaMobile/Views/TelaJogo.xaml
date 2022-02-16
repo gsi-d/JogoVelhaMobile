@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:JogoDaVelhaXamarin.ViewModels" x:DataType="viewmodels:TelaJogoViewModel"
+             xmlns:help="clr-namespace:JogoVelhaMobile.Helpers"
+             x:Class="JogoDaVelhaXamarin.Views.TelaJogo">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Tela Inicial" IconImageSource="voltar" Command="{Binding Voltar}" Order="Primary"/>
+        <ToolbarItem Text="Reiniciar jogo" IconImageSource="refresh" Command="{Binding ReiniciarJogo}" Clicked="ToolbarItem_Clicked" Order="Primary"/>
+        
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <Style  TargetType="{x:Type Button}" >
+            <Setter Property="Background" Value="white"/>
+            <Setter Property="FontSize" Value="Header"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Style.Triggers>
+                <Trigger TargetType="Button" Property="Text" Value="">
+                    <Setter Property="IsEnabled" Value="True"/>
+                </Trigger>
+                <Trigger TargetType="Button" Property="Text" Value="X">
+                    <Setter Property="TextColor" Value="#3CB371"/>
+                </Trigger>
+                <Trigger TargetType="bool" Property="Text" Value="O">
+                    <Setter Property="TextColor" Value="#FF6347"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type help:LabelCustom}">
+            <Setter Property="Margin" Value=""/>
+            <Style.Triggers>
+                <Trigger TargetType="{x:Type help:LabelCustom}" Property="PassouDeDez" Value="True">
+                    <Setter Property="Margin" Value=""/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid Margin="15" BackgroundColor="#2196F3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="150"/>
+                </Grid.RowDefinitions>
+                <Rectangle Background="white"/>
+                <Button x:Name="button1" ClassId="1"  Text="{Binding Button1, Mode=TwoWay}" Clicked="button_Clicked" Grid.Column="0" Grid.Row="0"/>
+                <Button x:Name="button4" ClassId="2"  Text="{Binding Button2, Mode=TwoWay}" Clicked="button_Clicked" Grid.Column="0" Grid.Row="1"/>
+                <Button x:Name="button7" ClassId="3"  Text="{Binding Button3, Mode=TwoWay}" Clicked="button_Clicked" Grid.Column="0" Grid.Row="2"/>
+                <Button x:Name="button2" ClassId="4"  Text="{Binding Button4, Mode=TwoWay}" Clicked="button_Clicked" Grid.Column="1" Grid.Row="0"/>
+                <Button x:Name="button5" ClassId="5"  Text="{Binding Button5, Mode=TwoWay}" Clicked="button_Clicked" Grid.Column="1" Grid.Row="1"/>
+                <Button x:Name="button8" ClassId="6"  Text="{Binding Button6, Mode=TwoWay}" Clicked="button_Clicked" Grid.Column="1" Grid.Row="2"/>
+                <Button x:Name="button3" ClassId="7"  Text="{Binding Button7, Mode=TwoWay}" Clicked="button_Clicked" Grid.Column="2" Grid.Row="0"/>
+                <Button x:Name="button6" ClassId="8"  Text="{Binding Button8, Mode=TwoWay}" Clicked="button_Clicked" Grid.Column="2" Grid.Row="1"/>
+                <Button x:Name="button9" ClassId="9" Text="{Binding Button9, Mode=TwoWay}" Clicked="button_Clicked" Grid.Column="2" Grid.Row="2"/>
+            </Grid>
+            <Rectangle Background="white"/>
+            <Image Source="X" WidthRequest="150" HeightRequest="150" Margin="-40"/>
+            <Rectangle Background="#ff4040" HeightRequest="120" Margin="10,-90,260,0" Fill="white" Aspect="Fill"/>
+            <Rectangle Background="#3CB371" HeightRequest="120" Margin="260,-126,10,0" Fill="white"/>
+            <help:LabelCustom PassouDeDez="{Binding PassouDeDez}" ClassId="txtO" Text="{Binding ContadorO}" Margin="28,-135,0,0"  FontSize="Header" TextColor="#ff4040">
+                <help:LabelCustom.Triggers>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding PassouDeDez}" Value="True"/>
+                            <BindingCondition Binding="TextColor" Value="#ff4040"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="Margin" Value="10,-90,260,0"/>
+                    </MultiTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding PassouDeDez}" Value="True"/>
+                            <BindingCondition Binding="TextColor" Value="#3CB371"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="Margin" Value="260,-126,10,0"/>
+                    </MultiTrigger>
+                </help:LabelCustom.Triggers>
+            </help:LabelCustom>
+            <help:LabelCustom PassouDeDez="{Binding PassouDeDez}" ClassId="txtX" Text="{Binding ContadorX}" Margin="280,-133,0,0"  FontSize="Header" TextColor="#3CB371">
+                <help:LabelCustom.Triggers>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding PassouDeDez}" Value="True"/>
+                            <BindingCondition Binding="TextColor" Value="#ff4040"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="Margin" Value="10,-90,260,0"/>
+                    </MultiTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding PassouDeDez}" Value="True"/>
+                            <BindingCondition Binding="TextColor" Value="#3CB371"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="Margin" Value="260,-126,10,0"/>
+                    </MultiTrigger>
+                </help:LabelCustom.Triggers>
+            </help:LabelCustom>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
