@@ -1,6 +1,7 @@
 ﻿using JogoDaVelhaXamarin.Models;
 using JogoDaVelhaXamarin.Views;
 using JogoVelhaMobile;
+using JogoVelhaMobile.Helpers;
 using JogoVelhaMobile.Views;
 using System;
 using System.Collections.Generic;
@@ -39,13 +40,37 @@ namespace JogoDaVelhaXamarin.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("ContadorO"));
             }
         }
+        public bool _BoolX;
+        public bool BoolX
+        {
+            get => _BoolX;
+            set
+            {
+                _BoolX = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(BoolX)));
+            }
+        }
+        public bool _BoolO;
+        public bool BoolO
+        {
+            get => _BoolO;
+            set
+            {
+                _BoolO = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(BoolO)));
+            }
+        }
 
-        private bool _PassouDeDez;
+        public bool _PassouDeDez;
         public bool PassouDeDez
         {
-            get { return _PassouDeDez; }
-            set { _PassouDeDez = value; PropertyChanged(this, new PropertyChangedEventArgs(nameof(PassouDeDez))); }
-        }       
+            get => _PassouDeDez;
+            set
+            {
+                _PassouDeDez = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(PassouDeDez)));
+            }
+        }
 
         public string buttonPadrao;
         public string ButtonPadrao
@@ -54,7 +79,7 @@ namespace JogoDaVelhaXamarin.ViewModels
             set
             {
                 buttonPadrao = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("ButtonPadrao"));
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(ButtonPadrao)));
             }
         }
 
@@ -186,11 +211,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
+                            BoolX = true;
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
+                            BoolO = true;
                         }
 
                         if (conf)
@@ -223,11 +250,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
+                            BoolX = true;
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
+                            BoolO = true;
                         }
 
                         if (conf)
@@ -260,11 +289,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
+                            BoolX = true;
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
+                            BoolO = true;
                         }
 
                         if (conf)
@@ -298,11 +329,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
+                            BoolX = true;
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
+                            BoolO = true;
                         }
 
                         if (conf)
@@ -335,11 +368,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
+                            BoolX = true;
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
+                            BoolO = true;
                         }
 
                         if (conf)
@@ -371,11 +406,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
+                            BoolX = true;
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
+                            BoolO = true;
                         }
 
                         bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
@@ -410,11 +447,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
+                            BoolX = true;
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
+                            BoolO = true;
                         }
 
                         if (conf)
@@ -446,12 +485,10 @@ namespace JogoDaVelhaXamarin.ViewModels
                         if (Vencedor == "X")
                         {
                             ContadorX++;
-                            PassouDeDez = ContadorO > 10;
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
-                            PassouDeDez = ContadorO > 10;
                         }
 
                         if (conf)
@@ -731,6 +768,355 @@ namespace JogoDaVelhaXamarin.ViewModels
             Button7 = "";
             Button8 = "";
             Button9 = "";
+        }
+
+        public async Task<bool> IAvalidaResultado(string btn1, string btn2, string btn3, string btn4, string btn5, string btn6, string btn7, string btn8, string btn9)
+        {
+            if ((Vencedor != "Vencedor:X") && (Vencedor != "Vencedor:O"))
+            {
+                //valida as linhas
+                if ((btn1 == btn2) && (btn2 == btn3) && !string.IsNullOrWhiteSpace(btn1))
+                {
+                    if (btn2.ToString() != "")
+                    {
+                        Vencedor = Last;
+                        Partida partida = new Partida()
+                        {
+                            Ganhador = "Jogador: " + Vencedor,
+                            Data = DateTime.Now.ToString()
+                        };
+                        await App.Database.Insert(partida);
+
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+
+                        if (Vencedor == "X")
+                        {
+                            ContadorX++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolX = true;
+                        }
+                        else if (Vencedor == "O")
+                        {
+                            ContadorO++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolO = true;
+                        }
+
+                        if (conf)
+                        {
+                            resetJogo();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                        return false;
+                }
+                else if ((btn4 == btn5) && (btn5 == btn6) && !string.IsNullOrWhiteSpace(btn4))
+                {
+                    if (btn5.ToString() != "")
+                    {
+                        Vencedor = Last;
+                        Partida partida = new Partida()
+                        {
+                            Ganhador = "Jogador: " + Vencedor,
+                            Data = DateTime.Now.ToString()
+                        };
+                        await App.Database.Insert(partida);
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+
+                        if (Vencedor == "X")
+                        {
+                            ContadorX++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolX = true;
+                        }
+                        else if (Vencedor == "O")
+                        {
+                            ContadorO++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolO = true;
+                        }
+
+                        if (conf)
+                        {
+                            resetJogo();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                        return false;
+                }
+                else if ((btn7 == btn8) && (btn8 == btn9) && !string.IsNullOrWhiteSpace(btn7))
+                {
+                    if (btn8.ToString() != "")
+                    {
+                        Vencedor = Last;
+                        Partida partida = new Partida()
+                        {
+                            Ganhador = "Jogador: " + Vencedor,
+                            Data = DateTime.Now.ToString()
+                        };
+                        await App.Database.Insert(partida);
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+
+                        if (Vencedor == "X")
+                        {
+                            ContadorX++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolX = true;
+                        }
+                        else if (Vencedor == "O")
+                        {
+                            ContadorO++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolO = true;
+                        }
+
+                        if (conf)
+                        {
+                            resetJogo();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                        return false;
+                }
+                //valida as colunas
+                else if ((btn1 == btn4) && (btn4 == btn7) && !string.IsNullOrWhiteSpace(btn1))
+                {
+                    if (btn4.ToString() != "")
+                    {
+                        Vencedor = Last;
+                        Partida partida = new Partida()
+                        {
+                            Ganhador = "Jogador: " + Vencedor,
+                            Data = DateTime.Now.ToString()
+                        };
+                        await App.Database.Insert(partida);
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+
+                        if (Vencedor == "X")
+                        {
+                            ContadorX++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolX = true;
+                        }
+                        else if (Vencedor == "O")
+                        {
+                            ContadorO++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolO = true;
+                        }
+
+                        if (conf)
+                        {
+                            resetJogo();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                        return false;
+                }
+                else if ((btn2 == btn5) && (btn5 == btn8) && !string.IsNullOrWhiteSpace(btn2))
+                {
+                    if (btn5.ToString() != "")
+                    {
+                        Vencedor = Last;
+                        Partida partida = new Partida()
+                        {
+                            Ganhador = "Jogador: " + Vencedor,
+                            Data = DateTime.Now.ToString()
+                        };
+                        await App.Database.Insert(partida);
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+
+                        if (Vencedor == "X")
+                        {
+                            ContadorX++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolX = true;
+                        }
+                        else if (Vencedor == "O")
+                        {
+                            ContadorO++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolO = true;
+                        }
+
+                        if (conf)
+                        {
+                            resetJogo();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                        return false;
+                }
+                else if ((btn3 == btn6) && (btn6 == btn9) && !string.IsNullOrWhiteSpace(btn3))
+                {
+                    if (btn6.ToString() != "")
+                    {
+                        Vencedor = Last;
+                        Partida partida = new Partida()
+                        {
+                            Ganhador = "Jogador: " + Vencedor,
+                            Data = DateTime.Now.ToString()
+                        };
+                        await App.Database.Insert(partida);
+
+                        if (Vencedor == "X")
+                        {
+                            ContadorX++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolX = true;
+                        }
+                        else if (Vencedor == "O")
+                        {
+                            ContadorO++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolO = true;
+                        }
+
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                        if (conf)
+                        {
+                            resetJogo();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                        return false;
+                }
+                //valida as diagonais
+                else if ((btn1 == btn5) && (btn5 == btn9) && !string.IsNullOrWhiteSpace(btn1))
+                {
+                    if (btn5.ToString() != "")
+                    {
+                        Vencedor = Last;
+                        Partida partida = new Partida()
+                        {
+                            Ganhador = "Jogador: " + Vencedor,
+                            Data = DateTime.Now.ToString()
+                        };
+                        await App.Database.Insert(partida);
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+
+                        if (Vencedor == "X")
+                        {
+                            ContadorX++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolX = true;
+                        }
+                        else if (Vencedor == "O")
+                        {
+                            ContadorO++;
+                            PassouDeDez = ContadorO > 10;
+                            BoolO = true;
+                        }
+
+                        if (conf)
+                        {
+                            resetJogo();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                        return false;
+                }
+                else if ((btn3 == btn5) && (btn5 == btn7) && !string.IsNullOrWhiteSpace(btn3))
+                {
+                    if (btn5.ToString() != "")
+                    {
+                        Vencedor = Last;
+                        Partida partida = new Partida()
+                        {
+                            Ganhador = "Jogador: " + Vencedor,
+                            Data = DateTime.Now.ToString()
+                        };
+                        await App.Database.Insert(partida);
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+
+                        if (Vencedor == "X")
+                        {
+                            ContadorX++;
+                        }
+                        else if (Vencedor == "O")
+                        {
+                            ContadorO++;
+                        }
+
+                        if (conf)
+                        {
+                            resetJogo();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                        return false;
+                }
+                else if (!string.IsNullOrWhiteSpace(btn1) && !string.IsNullOrWhiteSpace(btn2) && !string.IsNullOrWhiteSpace(btn3) && !string.IsNullOrWhiteSpace(btn4) &&
+                    !string.IsNullOrWhiteSpace(btn5) && !string.IsNullOrWhiteSpace(btn6) && !string.IsNullOrWhiteSpace(btn7) && !string.IsNullOrWhiteSpace(btn8) &&
+                    !string.IsNullOrWhiteSpace(btn9))
+                {
+                    Vencedor = "Deu velha!";
+                    Partida partida = new Partida()
+                    {
+                        Ganhador = "Jogador: " + Vencedor,
+                        Data = DateTime.Now.ToString()
+                    };
+                    await App.Database.Insert(partida);
+                    bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                    if (conf)
+                    {
+                        resetJogo();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

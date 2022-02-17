@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("JogoVelhaMobile.Views.TelaJogo.xaml", "Views/TelaJogo.xaml", typeof(global::JogoDaVelhaXamarin.Views.TelaJogo))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("JogoVelhaMobile.Views.IATelaJogo.xaml", "Views/IATelaJogo.xaml", typeof(global::JogoVelhaMobile.Views.IATelaJogo))]
 
-namespace JogoDaVelhaXamarin.Views {
+namespace JogoVelhaMobile.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\TelaJogo.xaml")]
-    public partial class TelaJogo : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\IATelaJogo.xaml")]
+    public partial class IATelaJogo : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button button1;
@@ -51,7 +51,7 @@ namespace JogoDaVelhaXamarin.Views {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TelaJogo));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(IATelaJogo));
             button1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "button1");
             button4 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "button4");
             button7 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "button7");

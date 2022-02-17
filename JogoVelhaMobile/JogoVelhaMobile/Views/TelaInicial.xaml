@@ -17,10 +17,10 @@
                 </Grid.ColumnDefinitions>
                 <Rectangle Fill="ghostWhite"
                     WidthRequest="380" RadiusX="20" RadiusY="20"
-                    HeightRequest="500"
-                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="-15"/>
-                
-                <Label Text="Escolha uma opção:" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="Center" FontSize="28" Grid.Row="0" Grid.ColumnSpan="4" />
+                    HeightRequest="550"
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="-55"/>
+
+                <Label Text="Escolha uma opção:" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="Center" FontSize="28" Grid.Row="0" Grid.ColumnSpan="4" HeightRequest="35"/>
                 <Label Text="OU" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="25" Grid.Row="1" Grid.ColumnSpan="4" />
                 <Button Text="Multiplayer" Clicked="ButtonMultiplayer" HorizontalOptions="Center" Grid.Row="1" Padding="20,0" Grid.ColumnSpan="2" BackgroundColor="#ff4040" CornerRadius="15"/>
                 <Button Text="Contra o Robô" Clicked="ButtonIA" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="Center" Padding="10" BackgroundColor="#2196F3" CornerRadius="15"/>

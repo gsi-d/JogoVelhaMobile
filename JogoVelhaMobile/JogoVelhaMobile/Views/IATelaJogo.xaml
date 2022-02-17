@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:JogoDaVelhaXamarin.ViewModels" x:DataType="viewmodels:TelaJogoViewModel"
-             x:Class="JogoDaVelhaXamarin.Views.TelaJogo">
-
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:JogoDaVelhaXamarin.ViewModels" x:DataType="viewmodels:TelaJogoViewModel"
+             x:Class="JogoVelhaMobile.Views.IATelaJogo">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Tela Inicial" IconImageSource="voltar" Command="{Binding Voltar}" Order="Primary"/>
         <ToolbarItem Text="Reiniciar jogo" IconImageSource="refresh" Command="{Binding ReiniciarJogo}" Clicked="ToolbarItem_Clicked" Order="Primary"/>
@@ -87,7 +87,7 @@
                             <Trigger TargetType="Label" Property="BackgroundColor" Value="Transparent">
                                 <Setter Property="Margin" Value="275,-126,27,0"/>
                             </Trigger>
-                        </Style.Triggers> 
+                        </Style.Triggers>
                     </Style>
                 </Label.Style>
             </Label>
