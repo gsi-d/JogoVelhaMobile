@@ -14,7 +14,8 @@ namespace JogoVelhaMobile.Views
     public partial class TelaInicial : ContentPage
     {
         public string MododeJogo;
-        MainPage mainPage = new MainPage();
+        public MainPage mainPage = new MainPage();
+        public IAMainPage IAmainPage = new IAMainPage();
         public TelaInicial()
         {
             InitializeComponent();
@@ -23,14 +24,14 @@ namespace JogoVelhaMobile.Views
 
         private void ButtonMultiplayer(object sender, EventArgs e)
         {
-            MododeJogo = "Multiplayer";            
+            MododeJogo = "Multiplayer";
             App.Current.MainPage = mainPage;
         }
 
         private void ButtonIA(object sender, EventArgs e)
         {
             MododeJogo = "IA";
-            App.Current.MainPage = mainPage;
+            App.Current.MainPage = IAmainPage;
         }
     }
 }

@@ -14,30 +14,61 @@ namespace JogoVelhaMobile.Views
     public partial class IATelaJogo : ContentPage
     {
         public TelaJogoViewModel jogoViewModel = new TelaJogoViewModel();
-        public TelaInicial telaInicial = new TelaInicial();
         public bool escolhaJogador;
-        public string caracterJogador;
-        public string caracterIA;
+        public bool jogoIniciado = false;
 
         public IATelaJogo()
         {
             InitializeComponent();
             BindingContext = jogoViewModel;
+            Iniciar();
         }
         private async void button_Clicked(object sender, EventArgs e)
         {
-
-            escolhaJogador = await Application.Current.MainPage.DisplayAlert("Vamos começar!!", "Escolha quem você quer ser:", "X", "O");
-            atribuiCaracteres(escolhaJogador);
             try
             {
                 Button botao = sender as Button;
-                botao.Text = jogoViewModel.validaCaractere(botao.ClassId);
-                bool resultado = await jogoViewModel.IAvalidaResultado(button1.Text, button2.Text, button3.Text, button4.Text, button5.Text, button6.Text, button7.Text, button8.Text, button9.Text);
+                jogoViewModel.atribuiCaracteres(escolhaJogador);
+                botao.Text = jogoViewModel.IAvalidaCaractere(botao.ClassId);
+                bool resultado = await jogoViewModel.validaResultado(button1.Text, button2.Text, button3.Text, button4.Text, button5.Text, button6.Text, button7.Text, button8.Text, button9.Text);
+                if (resultado)
+                {
+                    voltaBotoes();
+                }
+                else
+                {
+                    await jogoViewModel.IAJogada();
+                    resultado = await jogoViewModel.validaResultado(button1.Text, button2.Text, button3.Text, button4.Text, button5.Text, button6.Text, button7.Text, button8.Text, button9.Text);
+                    if (resultado)
+                    {
+                        voltaBotoes();
+                    }
+                    else if (jogoViewModel.Vencedor != "")
+                    {
+                        button1.Clicked -= button_Clicked;
+                        button2.Clicked -= button_Clicked;
+                        button3.Clicked -= button_Clicked;
+                        button4.Clicked -= button_Clicked;
+                        button5.Clicked -= button_Clicked;
+                        button6.Clicked -= button_Clicked;
+                        button7.Clicked -= button_Clicked;
+                        button8.Clicked -= button_Clicked;
+                        button9.Clicked -= button_Clicked;
+                    }
+                    else
+                    {
+                        botao.Clicked -= button_Clicked;
+                    }
+                }
+
+                if (jogoViewModel.ContadorX >= 10)
+                    lblX.BackgroundColor = Color.Transparent;
+                if (jogoViewModel.ContadorO >= 10)
+                    lblO.BackgroundColor = Color.Transparent;
             }
             catch (Exception ex)
             {
-
+                await DisplayAlert("Ops", ex.Message, "OK");
             }
         }
 
@@ -72,21 +103,18 @@ namespace JogoVelhaMobile.Views
                 button8.Clicked += button_Clicked;
                 button9.Clicked += button_Clicked;
                 jogoViewModel.Vencedor = "";
+                jogoIniciado = false;
             }
         }
 
-        public void atribuiCaracteres(bool caracterEscolhido)
+        public async void Iniciar()
         {
-            if (caracterEscolhido == true)
+            if (jogoIniciado == false)
             {
-                caracterJogador = "X";
-                caracterIA = "O";
-            }
-            else
-            {
-                caracterJogador = "O";
-                caracterIA = "X";
+                escolhaJogador = await DisplayAlert("Vamos começar!!", "Escolha quem você quer ser:", "X", "O");
+                jogoIniciado = true;
             }
         }
+
     }
 }

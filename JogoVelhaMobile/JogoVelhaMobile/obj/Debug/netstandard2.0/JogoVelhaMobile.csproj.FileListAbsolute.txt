@@ -52,3 +52,4 @@ C:\Users\vlnote15\Desktop\Guilherme\JogoDaVelhaMobile\JogoVelhaMobile\JogoVelhaM
 C:\Users\vlnote15\Desktop\Guilherme\JogoDaVelhaMobile\JogoVelhaMobile\JogoVelhaMobile\obj\Debug\netstandard2.0\JogoVelhaMobile.pdb
 C:\Users\vlnote15\Desktop\Guilherme\JogoDaVelhaMobile\JogoVelhaMobile\JogoVelhaMobile\obj\Debug\netstandard2.0\JogoVelhaMobile.csproj.AssemblyReference.cache
 C:\Users\vlnote15\Desktop\Guilherme\JogoDaVelhaMobile\JogoVelhaMobile\JogoVelhaMobile\obj\Debug\netstandard2.0\Views\IATelaJogo.xaml.g.cs
+C:\Users\vlnote15\Desktop\Guilherme\JogoDaVelhaMobile\JogoVelhaMobile\JogoVelhaMobile\obj\Debug\netstandard2.0\Views\IAMainPage.xaml.g.cs

@@ -20,6 +20,9 @@ namespace JogoDaVelhaXamarin.ViewModels
 
         private string Last = "O";
         public string Vencedor = "";
+        public string caracterJogador;
+        public string caracterIA;
+
         public int contadorX;
         public int ContadorX
         {
@@ -40,26 +43,7 @@ namespace JogoDaVelhaXamarin.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("ContadorO"));
             }
         }
-        public bool _BoolX;
-        public bool BoolX
-        {
-            get => _BoolX;
-            set
-            {
-                _BoolX = value;
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(BoolX)));
-            }
-        }
-        public bool _BoolO;
-        public bool BoolO
-        {
-            get => _BoolO;
-            set
-            {
-                _BoolO = value;
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(BoolO)));
-            }
-        }
+
 
         public bool _PassouDeDez;
         public bool PassouDeDez
@@ -211,13 +195,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
-                            BoolX = true;
+                            
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
-                            BoolO = true;
+                            
                         }
 
                         if (conf)
@@ -250,13 +234,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
-                            BoolX = true;
+                            
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
-                            BoolO = true;
+                            
                         }
 
                         if (conf)
@@ -289,13 +273,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
-                            BoolX = true;
+                            
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
-                            BoolO = true;
+                            
                         }
 
                         if (conf)
@@ -329,13 +313,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
-                            BoolX = true;
+                            
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
-                            BoolO = true;
+                            
                         }
 
                         if (conf)
@@ -368,13 +352,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
-                            BoolX = true;
+                            
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
-                            BoolO = true;
+                            
                         }
 
                         if (conf)
@@ -406,13 +390,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
-                            BoolX = true;
+                            
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
-                            BoolO = true;
+                            
                         }
 
                         bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
@@ -447,13 +431,13 @@ namespace JogoDaVelhaXamarin.ViewModels
                         {
                             ContadorX++;
                             PassouDeDez = ContadorO > 10;
-                            BoolX = true;
+                            
                         }
                         else if (Vencedor == "O")
                         {
                             ContadorO++;
                             PassouDeDez = ContadorO > 10;
-                            BoolO = true;
+                            
                         }
 
                         if (conf)
@@ -554,7 +538,6 @@ namespace JogoDaVelhaXamarin.ViewModels
                 }
                 else
                 {
-                    Button1 = "X";
                     return Button1;
                 }
             }
@@ -575,7 +558,6 @@ namespace JogoDaVelhaXamarin.ViewModels
                 }
                 else
                 {
-                    Button2 = "X";
                     return Button2;
                 }
             }
@@ -596,7 +578,6 @@ namespace JogoDaVelhaXamarin.ViewModels
                 }
                 else
                 {
-                    Button3 = "X";
                     return Button3;
                 }
             }
@@ -617,7 +598,6 @@ namespace JogoDaVelhaXamarin.ViewModels
                 }
                 else
                 {
-                    Button4 = "X";
                     return Button4;
                 }
             }
@@ -638,7 +618,6 @@ namespace JogoDaVelhaXamarin.ViewModels
                 }
                 else
                 {
-                    Button5 = "X";
                     return Button5;
                 }
             }
@@ -659,7 +638,6 @@ namespace JogoDaVelhaXamarin.ViewModels
                 }
                 else
                 {
-                    Button6 = "X";
                     return Button6;
                 }
             }
@@ -680,7 +658,6 @@ namespace JogoDaVelhaXamarin.ViewModels
                 }
                 else
                 {
-                    Button7 = "X";
                     return Button7;
                 }
             }
@@ -701,7 +678,6 @@ namespace JogoDaVelhaXamarin.ViewModels
                 }
                 else
                 {
-                    Button8 = "X";
                     return Button8;
                 }
             }
@@ -722,7 +698,6 @@ namespace JogoDaVelhaXamarin.ViewModels
                 }
                 else
                 {
-                    Button9 = "X";
                     return Button9;
                 }
             }
@@ -770,353 +745,638 @@ namespace JogoDaVelhaXamarin.ViewModels
             Button9 = "";
         }
 
-        public async Task<bool> IAvalidaResultado(string btn1, string btn2, string btn3, string btn4, string btn5, string btn6, string btn7, string btn8, string btn9)
+        public async Task<bool> IAJogada()
         {
-            if ((Vencedor != "Vencedor:X") && (Vencedor != "Vencedor:O"))
+            //Verifica jogada do Jogador
+            //Valida primeira coluna
+            if ((Button1 == caracterJogador) && (Button2 == caracterJogador) && string.IsNullOrEmpty(Button3))
             {
-                //valida as linhas
-                if ((btn1 == btn2) && (btn2 == btn3) && !string.IsNullOrWhiteSpace(btn1))
+                Last = caracterIA;
+                Button3 = caracterIA;
+                return true;
+            }
+            if ((Button2 == caracterJogador) && (Button3 == caracterJogador) && string.IsNullOrEmpty(Button1))
+            {
+                Last = caracterIA;
+                Button1 = caracterIA;
+                return true;
+            }
+            if ((Button1 == caracterJogador) && (Button3 == caracterJogador) && string.IsNullOrEmpty(Button2))
+            {
+                Last = caracterIA;
+                Button2 = caracterIA;
+                return true;
+            }
+            //Valida segunda coluna
+            if ((Button4 == caracterJogador) && (Button5 == caracterJogador) && string.IsNullOrEmpty(Button6))
+            {
+                Last = caracterIA;
+                Button6 = caracterIA;
+                return true;
+            }
+            if ((Button5 == caracterJogador) && (button6 == caracterJogador) && string.IsNullOrEmpty(Button4))
+            {
+                Last = caracterIA;
+                Button4 = caracterIA;
+                return true;
+            }
+            if ((Button4 == caracterJogador) && (Button6 == caracterJogador) && string.IsNullOrEmpty(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Valida terceira coluna
+            if ((Button7 == caracterJogador) && (Button8 == caracterJogador) && string.IsNullOrEmpty(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            if ((Button8 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button7))
+            {
+                Last = caracterIA;
+                Button7 = caracterIA;
+                return true;
+            }
+            if ((Button7 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button8))
+            {
+                Last = caracterIA;
+                Button8 = caracterIA;
+                return true;
+            }
+            //Valida primeira linha
+            if ((Button1 == caracterJogador) && (Button4 == caracterJogador) && string.IsNullOrEmpty(Button7))
+            {
+                Last = caracterIA;
+                Button7 = caracterIA;
+                return true;
+            }
+            if ((Button4 == caracterJogador) && (Button7 == caracterJogador) && string.IsNullOrEmpty(Button1))
+            {
+                Last = caracterIA;
+                Button1 = caracterIA;
+                return true;
+            }
+            if ((Button1 == caracterJogador) && (Button7 == caracterJogador) && string.IsNullOrEmpty(Button4))
+            {
+                Last = caracterIA;
+                Button4 = caracterIA;
+                return true;
+            }
+            //Valida segunda linha
+            if ((Button2 == caracterJogador) && (Button5 == caracterJogador) && string.IsNullOrEmpty(Button8))
+            {
+                Last = caracterIA;
+                Button8 = caracterIA;
+                return true;
+            }
+            if ((Button5 == caracterJogador) && (Button8 == caracterJogador) && string.IsNullOrEmpty(Button2))
+            {
+                Last = caracterIA;
+                Button2 = caracterIA;
+                return true;
+            }
+            if ((Button2 == caracterJogador) && (Button8 == caracterJogador) && string.IsNullOrEmpty(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Valida terceira linha
+            if ((Button3 == caracterJogador) && (Button6 == caracterJogador) && string.IsNullOrEmpty(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            if ((Button6 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button3))
+            {
+                Last = caracterIA;
+                Button3 = caracterIA;
+                return true;
+            }
+            if ((Button3 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button6))
+            {
+                Last = caracterIA;
+                Button6 = caracterIA;
+                return true;
+            }
+            //Valida diagonal 1
+            if ((Button1 == caracterJogador) && (Button5 == caracterJogador) && string.IsNullOrEmpty(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            if ((Button5 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button1))
+            {
+                Last = caracterIA;
+                Button1 = caracterIA;
+                return true;
+            }
+            if ((Button1 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Valida diagonal 2
+            if ((Button3 == caracterJogador) && (Button5 == caracterJogador) && string.IsNullOrEmpty(Button7))
+            {
+                Last = caracterIA;
+                Button7 = caracterIA;
+                return true;
+            }
+            if ((Button5 == caracterJogador) && (Button7 == caracterJogador) && string.IsNullOrEmpty(Button3))
+            {
+                Last = caracterIA;
+                Button3 = caracterIA;
+                return true;
+            }
+            if ((Button3 == caracterJogador) && (Button7 == caracterJogador) && string.IsNullOrEmpty(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+
+            //Primeiros movimentos caso o adversário não esteja engatilhado
+            if (string.IsNullOrWhiteSpace(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            else if (Button5 == caracterJogador)
+            {
+                if (string.IsNullOrWhiteSpace(Button1))
                 {
-                    if (btn2.ToString() != "")
-                    {
-                        Vencedor = Last;
-                        Partida partida = new Partida()
-                        {
-                            Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
-                        };
-                        await App.Database.Insert(partida);
-
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
-
-                        if (Vencedor == "X")
-                        {
-                            ContadorX++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolX = true;
-                        }
-                        else if (Vencedor == "O")
-                        {
-                            ContadorO++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolO = true;
-                        }
-
-                        if (conf)
-                        {
-                            resetJogo();
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                        return false;
+                    Last = caracterIA;
+                    Button1 = caracterIA;
+                    return true;
                 }
-                else if ((btn4 == btn5) && (btn5 == btn6) && !string.IsNullOrWhiteSpace(btn4))
+                if (string.IsNullOrWhiteSpace(Button7))
                 {
-                    if (btn5.ToString() != "")
-                    {
-                        Vencedor = Last;
-                        Partida partida = new Partida()
-                        {
-                            Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
-                        };
-                        await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
-
-                        if (Vencedor == "X")
-                        {
-                            ContadorX++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolX = true;
-                        }
-                        else if (Vencedor == "O")
-                        {
-                            ContadorO++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolO = true;
-                        }
-
-                        if (conf)
-                        {
-                            resetJogo();
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                        return false;
+                    Last = caracterIA;
+                    Button7 = caracterIA;
+                    return true;
                 }
-                else if ((btn7 == btn8) && (btn8 == btn9) && !string.IsNullOrWhiteSpace(btn7))
+                if (string.IsNullOrWhiteSpace(Button3))
                 {
-                    if (btn8.ToString() != "")
-                    {
-                        Vencedor = Last;
-                        Partida partida = new Partida()
-                        {
-                            Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
-                        };
-                        await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
-
-                        if (Vencedor == "X")
-                        {
-                            ContadorX++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolX = true;
-                        }
-                        else if (Vencedor == "O")
-                        {
-                            ContadorO++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolO = true;
-                        }
-
-                        if (conf)
-                        {
-                            resetJogo();
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                        return false;
+                    Last = caracterIA;
+                    Button3 = caracterIA;
+                    return true;
                 }
-                //valida as colunas
-                else if ((btn1 == btn4) && (btn4 == btn7) && !string.IsNullOrWhiteSpace(btn1))
+                if (string.IsNullOrWhiteSpace(Button9))
                 {
-                    if (btn4.ToString() != "")
-                    {
-                        Vencedor = Last;
-                        Partida partida = new Partida()
-                        {
-                            Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
-                        };
-                        await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
-
-                        if (Vencedor == "X")
-                        {
-                            ContadorX++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolX = true;
-                        }
-                        else if (Vencedor == "O")
-                        {
-                            ContadorO++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolO = true;
-                        }
-
-                        if (conf)
-                        {
-                            resetJogo();
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                        return false;
+                    Last = caracterIA;
+                    Button9 = caracterIA;
+                    return true;
                 }
-                else if ((btn2 == btn5) && (btn5 == btn8) && !string.IsNullOrWhiteSpace(btn2))
+                if ((Button1 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrWhiteSpace(Button3))
                 {
-                    if (btn5.ToString() != "")
-                    {
-                        Vencedor = Last;
-                        Partida partida = new Partida()
-                        {
-                            Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
-                        };
-                        await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
-
-                        if (Vencedor == "X")
-                        {
-                            ContadorX++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolX = true;
-                        }
-                        else if (Vencedor == "O")
-                        {
-                            ContadorO++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolO = true;
-                        }
-
-                        if (conf)
-                        {
-                            resetJogo();
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                        return false;
+                    Last = caracterIA;
+                    Button3 = caracterIA;
+                    return true;
                 }
-                else if ((btn3 == btn6) && (btn6 == btn9) && !string.IsNullOrWhiteSpace(btn3))
+                else if ((Button1 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrWhiteSpace(Button7))
                 {
-                    if (btn6.ToString() != "")
-                    {
-                        Vencedor = Last;
-                        Partida partida = new Partida()
-                        {
-                            Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
-                        };
-                        await App.Database.Insert(partida);
-
-                        if (Vencedor == "X")
-                        {
-                            ContadorX++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolX = true;
-                        }
-                        else if (Vencedor == "O")
-                        {
-                            ContadorO++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolO = true;
-                        }
-
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
-                        if (conf)
-                        {
-                            resetJogo();
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                        return false;
+                    Last = caracterIA;
+                    Button7 = caracterIA;
+                    return true;
                 }
-                //valida as diagonais
-                else if ((btn1 == btn5) && (btn5 == btn9) && !string.IsNullOrWhiteSpace(btn1))
-                {
-                    if (btn5.ToString() != "")
-                    {
-                        Vencedor = Last;
-                        Partida partida = new Partida()
-                        {
-                            Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
-                        };
-                        await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
-
-                        if (Vencedor == "X")
-                        {
-                            ContadorX++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolX = true;
-                        }
-                        else if (Vencedor == "O")
-                        {
-                            ContadorO++;
-                            PassouDeDez = ContadorO > 10;
-                            BoolO = true;
-                        }
-
-                        if (conf)
-                        {
-                            resetJogo();
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                        return false;
-                }
-                else if ((btn3 == btn5) && (btn5 == btn7) && !string.IsNullOrWhiteSpace(btn3))
-                {
-                    if (btn5.ToString() != "")
-                    {
-                        Vencedor = Last;
-                        Partida partida = new Partida()
-                        {
-                            Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
-                        };
-                        await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
-
-                        if (Vencedor == "X")
-                        {
-                            ContadorX++;
-                        }
-                        else if (Vencedor == "O")
-                        {
-                            ContadorO++;
-                        }
-
-                        if (conf)
-                        {
-                            resetJogo();
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                        return false;
-                }
-                else if (!string.IsNullOrWhiteSpace(btn1) && !string.IsNullOrWhiteSpace(btn2) && !string.IsNullOrWhiteSpace(btn3) && !string.IsNullOrWhiteSpace(btn4) &&
-                    !string.IsNullOrWhiteSpace(btn5) && !string.IsNullOrWhiteSpace(btn6) && !string.IsNullOrWhiteSpace(btn7) && !string.IsNullOrWhiteSpace(btn8) &&
-                    !string.IsNullOrWhiteSpace(btn9))
-                {
-                    Vencedor = "Deu velha!";
-                    Partida partida = new Partida()
-                    {
-                        Ganhador = "Jogador: " + Vencedor,
-                        Data = DateTime.Now.ToString()
-                    };
-                    await App.Database.Insert(partida);
-                    bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
-                    if (conf)
-                    {
-                        resetJogo();
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
+            }
+            //Valida primeira coluna
+            if ((Button1 == caracterIA) && (Button2 == caracterIA) && string.IsNullOrEmpty(Button3))
+            {
+                Last = caracterIA;
+                Button3 = caracterIA;
+                return true;
+            }
+            if ((Button2 == caracterIA) && (Button3 == caracterIA) && string.IsNullOrEmpty(Button1))
+            {
+                Last = caracterIA;
+                Button1 = caracterIA;
+                return true;
+            }
+            if ((Button1 == caracterIA) && (Button3 == caracterIA) && string.IsNullOrEmpty(Button2))
+            {
+                Last = caracterIA;
+                Button2 = caracterIA;
+                return true;
+            }
+            //Valida segunda coluna
+            if ((Button4 == caracterIA) && (Button5 == caracterIA) && string.IsNullOrEmpty(Button6))
+            {
+                Last = caracterIA;
+                Button6 = caracterIA;
+                return true;
+            }
+            if ((Button5 == caracterIA) && (button6 == caracterIA) && string.IsNullOrEmpty(Button4))
+            {
+                Last = caracterIA;
+                Button4 = caracterIA;
+                return true;
+            }
+            if ((Button4 == caracterIA) && (Button6 == caracterIA) && string.IsNullOrEmpty(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Valida terceira coluna
+            if ((Button7 == caracterIA) && (Button8 == caracterIA) && string.IsNullOrEmpty(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            if ((Button8 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button7))
+            {
+                Last = caracterIA;
+                Button7 = caracterIA;
+                return true;
+            }
+            if ((Button7 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button8))
+            {
+                Last = caracterIA;
+                Button8 = caracterIA;
+                return true;
+            }
+            //Valida primeira linha
+            if ((Button1 == caracterIA) && (Button4 == caracterIA) && string.IsNullOrEmpty(Button7))
+            {
+                Last = caracterIA;
+                Button7 = caracterIA;
+                return true;
+            }
+            if ((Button4 == caracterIA) && (Button7 == caracterIA) && string.IsNullOrEmpty(Button1))
+            {
+                Last = caracterIA;
+                Button1 = caracterIA;
+                return true;
+            }
+            if ((Button1 == caracterIA) && (Button7 == caracterIA) && string.IsNullOrEmpty(Button4))
+            {
+                Last = caracterIA;
+                Button4 = caracterIA;
+                return true;
+            }
+            //Valida segunda linha
+            if ((Button2 == caracterIA) && (Button5 == caracterIA) && string.IsNullOrEmpty(Button8))
+            {
+                Last = caracterIA;
+                Button8 = caracterIA;
+                return true;
+            }
+            if ((Button5 == caracterIA) && (Button8 == caracterIA) && string.IsNullOrEmpty(Button2))
+            {
+                Last = caracterIA;
+                Button2 = caracterIA;
+                return true;
+            }
+            if ((Button2 == caracterIA) && (Button8 == caracterIA) && string.IsNullOrEmpty(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Valida terceira linha
+            if ((Button3 == caracterIA) && (Button6 == caracterIA) && string.IsNullOrEmpty(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            if ((Button6 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button3))
+            {
+                Last = caracterIA;
+                Button3 = caracterIA;
+                return true;
+            }
+            if ((Button3 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button6))
+            {
+                Last = caracterIA;
+                Button6 = caracterIA;
+                return true;
+            }
+            //Valida diagonal 1
+            if ((Button1 == caracterIA) && (Button5 == caracterIA) && string.IsNullOrEmpty(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            if ((Button5 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button1))
+            {
+                Last = caracterIA;
+                Button1 = caracterIA;
+                return true;
+            }
+            if ((Button1 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Valida diagonal 2
+            if ((Button3 == caracterIA) && (Button5 == caracterIA) && string.IsNullOrEmpty(Button7))
+            {
+                Last = caracterIA;
+                Button7 = caracterIA;
+                return true;
+            }
+            if ((Button5 == caracterIA) && (Button7 == caracterIA) && string.IsNullOrEmpty(Button3))
+            {
+                Last = caracterIA;
+                Button3 = caracterIA;
+                return true;
+            }
+            if ((Button3 == caracterIA) && (Button7 == caracterIA) && string.IsNullOrEmpty(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Validação por botão
+            //Button 1
+            //Coluna
+            if ((Button1 == caracterIA) && string.IsNullOrWhiteSpace(Button2) && string.IsNullOrWhiteSpace(Button3))
+            {
+                Last = caracterIA;
+                Button3 = caracterIA;
+                return true;
+            }
+            //Linha
+            if ((Button1 == caracterIA) && string.IsNullOrWhiteSpace(Button4) && string.IsNullOrWhiteSpace(Button7))
+            {
+                Last = caracterIA;
+                Button7 = caracterIA;
+                return true;
+            }
+            //Diagonal
+            if ((Button1 == caracterIA) && string.IsNullOrWhiteSpace(Button5) && string.IsNullOrWhiteSpace(Button9))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Button 2
+            //Coluna
+            if ((Button2 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button3))
+            {
+                Last = caracterIA;
+                Button1 = caracterIA;
+                return true;
+            }
+            //Linha
+            if ((Button2 == caracterIA) && string.IsNullOrWhiteSpace(Button5) && string.IsNullOrWhiteSpace(Button8))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Button 3
+            //Coluna
+            if ((Button3 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button2))
+            {
+                Last = caracterIA;
+                Button1 = caracterIA;
+                return true;
+            }
+            //Linha
+            if ((Button3 == caracterIA) && string.IsNullOrWhiteSpace(Button6) && string.IsNullOrWhiteSpace(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            //Diagonal
+            if ((Button3 == caracterIA) && string.IsNullOrWhiteSpace(Button5) && string.IsNullOrWhiteSpace(Button7))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Button 4
+            //Coluna
+            if ((Button4 == caracterIA) && string.IsNullOrWhiteSpace(Button5) && string.IsNullOrWhiteSpace(Button6))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Linha
+            if ((Button4 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button7))
+            {
+                Last = caracterIA;
+                Button7 = caracterIA;
+                return true;
+            }
+            //Button 5 
+            //Coluna
+            if ((Button5 == caracterIA) && string.IsNullOrWhiteSpace(Button4) && string.IsNullOrWhiteSpace(Button6))
+            {
+                Last = caracterIA;
+                Button4 = caracterIA;
+                return true;
+            }
+            //Linha
+            if ((Button5 == caracterIA) && string.IsNullOrWhiteSpace(Button2) && string.IsNullOrWhiteSpace(Button8))
+            {
+                Last = caracterIA;
+                Button2 = caracterIA;
+                return true;
+            }
+            //Diagonais
+            if ((Button5 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            if ((Button5 == caracterIA) && string.IsNullOrWhiteSpace(Button3) && string.IsNullOrWhiteSpace(Button7))
+            {
+                Last = caracterIA;
+                Button3 = caracterIA;
+                return true;
+            }
+            //Button 6
+            //Coluna
+            if ((Button6 == caracterIA) && string.IsNullOrWhiteSpace(Button4) && string.IsNullOrWhiteSpace(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            if ((Button6 == caracterIA) && string.IsNullOrWhiteSpace(Button3) && string.IsNullOrWhiteSpace(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            //Button 7
+            //Coluna
+            if ((Button7 == caracterIA) && string.IsNullOrWhiteSpace(Button8) && string.IsNullOrWhiteSpace(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            //Linha
+            if ((Button7 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button4))
+            {
+                Last = caracterIA;
+                Button1 = caracterIA;
+                return true;
+            }
+            //Diagonal
+            if ((Button7 == caracterIA) && string.IsNullOrWhiteSpace(Button5) && string.IsNullOrWhiteSpace(Button3))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Button 8
+            //Coluna
+            if ((Button8 == caracterIA) && string.IsNullOrWhiteSpace(Button7) && string.IsNullOrWhiteSpace(Button9))
+            {
+                Last = caracterIA;
+                Button9 = caracterIA;
+                return true;
+            }
+            //Linha
+            if ((Button8 == caracterIA) && string.IsNullOrWhiteSpace(Button2) && string.IsNullOrWhiteSpace(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
+            }
+            //Button 9
+            //Coluna
+            if ((Button9 == caracterIA) && string.IsNullOrWhiteSpace(Button7) && string.IsNullOrWhiteSpace(Button8))
+            {
+                Last = caracterIA;
+                Button7 = caracterIA;
+                return true;
+            }
+            //Linha
+            if ((Button9 == caracterIA) && string.IsNullOrWhiteSpace(Button3) && string.IsNullOrWhiteSpace(Button6))
+            {
+                Last = caracterIA;
+                Button3 = caracterIA;
+                return true;
+            }
+            //Diagonal
+            if ((Button9 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button5))
+            {
+                Last = caracterIA;
+                Button5 = caracterIA;
+                return true;
             }
             else
             {
                 return false;
             }
+
+        }
+        public string IAvalidaCaractere(string buttonPadrao)
+        {
+            if (buttonPadrao == "1")
+            {
+
+                Last = caracterJogador;
+                Button1 = caracterJogador;
+                return Button1;
+
+            }
+
+            if (buttonPadrao == "2")
+            {
+                Last = caracterJogador;
+                Button2 = caracterJogador;
+                return Button2;
+
+            }
+
+            if (buttonPadrao == "3")
+            {
+
+                Last = caracterJogador;
+                Button3 = caracterJogador;
+                return Button3;
+
+            }
+
+            if (buttonPadrao == "4")
+            {
+
+                Last = caracterJogador;
+                Button4 = caracterJogador;
+                return Button4;
+
+            }
+
+            if (buttonPadrao == "5")
+            {
+
+                Last = caracterJogador;
+                Button5 = caracterJogador;
+                return Button5;
+
+            }
+
+            if (buttonPadrao == "6")
+            {
+
+                Last = caracterJogador;
+                Button6 = caracterJogador;
+                return Button6;
+
+            }
+
+            if (buttonPadrao == "7")
+            {
+
+                Last = caracterJogador;
+                Button7 = caracterJogador;
+                return Button7;
+
+            }
+
+            if (buttonPadrao == "8")
+            {
+
+                Last = caracterJogador;
+                Button8 = caracterJogador;
+                return Button8;
+
+            }
+
+            if (buttonPadrao == "9")
+            {
+
+                Last = caracterJogador;
+                Button9 = caracterJogador;
+                return Button9;
+
+            }
+            return buttonPadrao;
+        }
+        public void atribuiCaracteres(bool caracterEscolhido)
+        {
+            if (caracterEscolhido == true)
+            {
+                caracterJogador = "X";
+                caracterIA = "O";
+            }
+            else
+            {
+                caracterJogador = "O";
+                caracterIA = "X";
+            }
         }
     }
 }
+
