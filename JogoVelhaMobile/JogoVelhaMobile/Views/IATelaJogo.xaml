@@ -26,14 +26,6 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <!--<Style TargetType="{x:Type help:LabelCustom}">
-            <Setter Property="Margin" Value="50,0,0,0"/>
-            <Style.Triggers>
-                <Trigger TargetType="{x:Type help:LabelCustom}" Property="PassouDeDez" Value="True">
-                    <Setter Property="Margin" Value=""/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>-->
     </ContentPage.Resources>
 
     <ContentPage.Content>
@@ -62,30 +54,30 @@
                 <Button x:Name="button9" ClassId="9" Text="{Binding Button9, Mode=TwoWay}" Clicked="button_Clicked" Grid.Column="2" Grid.Row="2"/>
             </Grid>
             <Rectangle Background="white"/>
-            <Image Source="X" WidthRequest="150" HeightRequest="150" Margin="-40"/>
-            <Rectangle Background="#ff4040" HeightRequest="130" Margin="10,-90,260,0" Fill="white" Aspect="Fill"/>
+            <Image Source="X" WidthRequest="150" HeightRequest="150" Margin="25"/>
+            <Rectangle Background="#ff4040" HeightRequest="130" Margin="10,-180,260,0" Fill="white" Aspect="Fill"/>
             <Rectangle Background="#3CB371" HeightRequest="130" Margin="260,-137,10,0" Fill="white"/>
-            <Label x:Name="lblO" Text="{Binding ContadorO}" Margin="53,-134,300,0" HeightRequest="120" FontSize="Header" TextColor="#ff4040">
+            <Label x:Name="lblO" Text="{Binding ContadorO}" Margin="45,-134,290,0" HeightRequest="120" FontSize="Header" TextColor="#ff4040">
                 <Label.Style>
                     <Style TargetType="Label">
                         <Setter Property="HeightRequest" Value="95"/>
                         <Setter Property="BackgroundColor" Value="white"/>
                         <Style.Triggers>
                             <Trigger TargetType="Label" Property="BackgroundColor" Value="Transparent">
-                                <Setter Property="Margin" Value="29,-134,268,0"/>
+                                <Setter Property="Margin" Value="20,-134,265,0"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
                 </Label.Style>
             </Label>
-            <Label x:Name="lblX" Text="{Binding ContadorX}" Margin="303,-126,50,0" FontSize="Header" TextColor="#3CB371">
+            <Label x:Name="lblX" Text="{Binding ContadorX}" Margin="296,-127,40,0" FontSize="Header" TextColor="#3CB371">
                 <Label.Style>
                     <Style TargetType="Label">
                         <Setter Property="BackgroundColor" Value="white"/>
                         <Setter Property="HeightRequest" Value="103"/>
                         <Style.Triggers TargetType="Label">
                             <Trigger TargetType="Label" Property="BackgroundColor" Value="Transparent">
-                                <Setter Property="Margin" Value="275,-126,27,0"/>
+                                <Setter Property="Margin" Value="265,-126,20,0"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>

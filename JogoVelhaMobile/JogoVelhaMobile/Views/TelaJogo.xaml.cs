@@ -34,8 +34,7 @@ namespace JogoDaVelhaXamarin.Views
                 {
                     voltaBotoes();
                 }
-
-                else if (jogoViewModel.Vencedor != "")
+                if (jogoViewModel.Vencedor != "")
                 {
                     button1.Clicked -= button_Clicked;
                     button2.Clicked -= button_Clicked;

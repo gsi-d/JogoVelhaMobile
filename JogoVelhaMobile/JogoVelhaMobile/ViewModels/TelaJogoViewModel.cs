@@ -745,7 +745,7 @@ namespace JogoDaVelhaXamarin.ViewModels
             Button9 = "";
         }
 
-        public async Task<bool> IAJogada()
+        public bool IAJogada()
         {
             //Verifica jogada do Jogador
             //Valida primeira coluna
