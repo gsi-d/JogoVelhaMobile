@@ -10,19 +10,19 @@
         <RefreshView IsRefreshing="{Binding EstaAtualizando, Mode=OneWay}" Command="{Binding AtualizarPartidas}">
             <ListView ItemsSource="{Binding ListaPartidas}">
                     <ListView.Header>
-                        <Grid ColumnDefinitions="*,*,*" RowDefinitions="auto">
-                            <Label Grid.Row="0" Grid.Column="0" Text="Id" TextColor="#184e77" Padding="10" FontSize="Medium"/>
-                            <Label Grid.Row="0" Grid.Column="1" Text="Vencedor" TextColor="#184e77" Padding="10" FontSize="Medium"/>
-                            <Label Grid.Row="0" Grid.Column="2" Text="Data" TextColor="#184e77" Padding="10" FontSize="Medium"/>
+                        <Grid ColumnDefinitions="*,*,*" RowDefinitions="auto" BackgroundColor="Gray">
+                            <Label Grid.Row="0" Grid.Column="0" Text="Id" TextColor="#184e77" Padding="10" FontSize="Medium" BackgroundColor="#f5f3f4"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Vencedor" TextColor="#184e77" Padding="10" FontSize="Medium" BackgroundColor="#f5f3f4"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="Data" TextColor="#184e77" Padding="10" FontSize="Medium" BackgroundColor="#f5f3f4"/>
                         </Grid>
                     </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                             <ViewCell>
-                                <Grid RowDefinitions="Auto" ColumnDefinitions="*,*,*">
-                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Id}" Padding="10" TextColor="#2196F3" FontSize="Body"/>
-                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Ganhador}"  TextColor="#2196F3" FontSize="Body"/>
-                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding Data, StringFormat='{}{0:dd/MM/yyyy}'}" Padding="0,0,-20,0" TextColor="#2196F3" FontSize="Body"/>
+                                <Grid RowDefinitions="Auto" ColumnDefinitions="*,*,*" BackgroundColor="gray">
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Id}" Padding="10" TextColor="#2196F3" FontSize="Body" BackgroundColor="#f5f3f4"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Ganhador}"  TextColor="#2196F3" FontSize="Body" BackgroundColor="#f5f3f4" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding Data, StringFormat='{}{0:dd/MM/yyyy}'}" Padding="0,0,-20,0" TextColor="#2196F3" FontSize="Body" BackgroundColor="#f5f3f4"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

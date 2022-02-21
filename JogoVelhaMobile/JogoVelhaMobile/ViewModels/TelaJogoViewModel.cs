@@ -185,11 +185,11 @@ namespace JogoDaVelhaXamarin.ViewModels
                         Partida partida = new Partida()
                         {
                             Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
+                            Data = DateTime.Now.ToString("dd/MM/yy HH:mm")
                         };
                         await App.Database.Insert(partida);
 
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor: {Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
 
                         if (Vencedor == "X")
                         {
@@ -225,10 +225,10 @@ namespace JogoDaVelhaXamarin.ViewModels
                         Partida partida = new Partida()
                         {
                             Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
+                            Data = DateTime.Now.ToString("dd/MM/yy HH:mm")
                         };
                         await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor: {Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
 
                         if (Vencedor == "X")
                         {
@@ -264,10 +264,10 @@ namespace JogoDaVelhaXamarin.ViewModels
                         Partida partida = new Partida()
                         {
                             Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
+                            Data = DateTime.Now.ToString("dd/MM/yy HH:mm")
                         };
                         await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor: {Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
 
                         if (Vencedor == "X")
                         {
@@ -304,10 +304,10 @@ namespace JogoDaVelhaXamarin.ViewModels
                         Partida partida = new Partida()
                         {
                             Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
+                            Data = DateTime.Now.ToString("dd/MM/yy HH:mm")
                         };
                         await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor: {Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
 
                         if (Vencedor == "X")
                         {
@@ -343,10 +343,10 @@ namespace JogoDaVelhaXamarin.ViewModels
                         Partida partida = new Partida()
                         {
                             Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
+                            Data = DateTime.Now.ToString("dd/MM/yy HH:mm")
                         };
                         await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor: {Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
 
                         if (Vencedor == "X")
                         {
@@ -382,7 +382,7 @@ namespace JogoDaVelhaXamarin.ViewModels
                         Partida partida = new Partida()
                         {
                             Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
+                            Data = DateTime.Now.ToString("dd/MM/yy HH:mm")
                         };
                         await App.Database.Insert(partida);
 
@@ -399,7 +399,7 @@ namespace JogoDaVelhaXamarin.ViewModels
                             
                         }
 
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor: {Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
                         if (conf)
                         {
                             resetJogo();
@@ -422,10 +422,10 @@ namespace JogoDaVelhaXamarin.ViewModels
                         Partida partida = new Partida()
                         {
                             Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
+                            Data = DateTime.Now.ToString("dd/MM/yy HH:mm")
                         };
                         await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor: {Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
 
                         if (Vencedor == "X")
                         {
@@ -461,10 +461,10 @@ namespace JogoDaVelhaXamarin.ViewModels
                         Partida partida = new Partida()
                         {
                             Ganhador = "Jogador: " + Vencedor,
-                            Data = DateTime.Now.ToString()
+                            Data = DateTime.Now.ToString("dd/MM/yy HH:mm")
                         };
                         await App.Database.Insert(partida);
-                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                        bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor: {Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
 
                         if (Vencedor == "X")
                         {
@@ -495,11 +495,11 @@ namespace JogoDaVelhaXamarin.ViewModels
                     Vencedor = "Deu velha!";
                     Partida partida = new Partida()
                     {
-                        Ganhador = "Jogador: " + Vencedor,
-                        Data = DateTime.Now.ToString()
+                        Ganhador =  Vencedor,
+                        Data = DateTime.Now.ToString("dd/MM/yy HH:mm")
                     };
                     await App.Database.Insert(partida);
-                    bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor:{Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
+                    bool conf = await Application.Current.MainPage.DisplayAlert($"Fim de Jogo! Vencedor: {Vencedor}!", "Deseja reiniciar o jogo?", "Sim", "Não");
                     if (conf)
                     {
                         resetJogo();
@@ -751,152 +751,152 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Valida primeira coluna
             if ((Button1 == caracterJogador) && (Button2 == caracterJogador) && string.IsNullOrEmpty(Button3))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button3 = caracterIA;
                 return true;
             }
             if ((Button2 == caracterJogador) && (Button3 == caracterJogador) && string.IsNullOrEmpty(Button1))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button1 = caracterIA;
                 return true;
             }
             if ((Button1 == caracterJogador) && (Button3 == caracterJogador) && string.IsNullOrEmpty(Button2))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button2 = caracterIA;
                 return true;
             }
             //Valida segunda coluna
             if ((Button4 == caracterJogador) && (Button5 == caracterJogador) && string.IsNullOrEmpty(Button6))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button6 = caracterIA;
                 return true;
             }
             if ((Button5 == caracterJogador) && (button6 == caracterJogador) && string.IsNullOrEmpty(Button4))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button4 = caracterIA;
                 return true;
             }
             if ((Button4 == caracterJogador) && (Button6 == caracterJogador) && string.IsNullOrEmpty(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
             //Valida terceira coluna
             if ((Button7 == caracterJogador) && (Button8 == caracterJogador) && string.IsNullOrEmpty(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
             if ((Button8 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button7))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button7 = caracterIA;
                 return true;
             }
             if ((Button7 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button8))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button8 = caracterIA;
                 return true;
             }
             //Valida primeira linha
             if ((Button1 == caracterJogador) && (Button4 == caracterJogador) && string.IsNullOrEmpty(Button7))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button7 = caracterIA;
                 return true;
             }
             if ((Button4 == caracterJogador) && (Button7 == caracterJogador) && string.IsNullOrEmpty(Button1))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button1 = caracterIA;
                 return true;
             }
             if ((Button1 == caracterJogador) && (Button7 == caracterJogador) && string.IsNullOrEmpty(Button4))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button4 = caracterIA;
                 return true;
             }
             //Valida segunda linha
             if ((Button2 == caracterJogador) && (Button5 == caracterJogador) && string.IsNullOrEmpty(Button8))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button8 = caracterIA;
                 return true;
             }
             if ((Button5 == caracterJogador) && (Button8 == caracterJogador) && string.IsNullOrEmpty(Button2))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button2 = caracterIA;
                 return true;
             }
             if ((Button2 == caracterJogador) && (Button8 == caracterJogador) && string.IsNullOrEmpty(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
             //Valida terceira linha
             if ((Button3 == caracterJogador) && (Button6 == caracterJogador) && string.IsNullOrEmpty(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
             if ((Button6 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button3))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button3 = caracterIA;
                 return true;
             }
             if ((Button3 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button6))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button6 = caracterIA;
                 return true;
             }
             //Valida diagonal 1
             if ((Button1 == caracterJogador) && (Button5 == caracterJogador) && string.IsNullOrEmpty(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
             if ((Button5 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button1))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button1 = caracterIA;
                 return true;
             }
             if ((Button1 == caracterJogador) && (Button9 == caracterJogador) && string.IsNullOrEmpty(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
             //Valida diagonal 2
             if ((Button3 == caracterJogador) && (Button5 == caracterJogador) && string.IsNullOrEmpty(Button7))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button7 = caracterIA;
                 return true;
             }
             if ((Button5 == caracterJogador) && (Button7 == caracterJogador) && string.IsNullOrEmpty(Button3))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button3 = caracterIA;
                 return true;
             }
             if ((Button3 == caracterJogador) && (Button7 == caracterJogador) && string.IsNullOrEmpty(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
@@ -904,7 +904,7 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Primeiros movimentos caso o adversário não esteja engatilhado
             if (string.IsNullOrWhiteSpace(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
@@ -912,37 +912,37 @@ namespace JogoDaVelhaXamarin.ViewModels
             {
                 if (string.IsNullOrWhiteSpace(Button1))
                 {
-                    Last = caracterIA;
+                    Last = "Máquina";
                     Button1 = caracterIA;
                     return true;
                 }
                 if (string.IsNullOrWhiteSpace(Button7))
                 {
-                    Last = caracterIA;
+                    Last = "Máquina";
                     Button7 = caracterIA;
                     return true;
                 }
                 if (string.IsNullOrWhiteSpace(Button3))
                 {
-                    Last = caracterIA;
+                    Last = "Máquina";
                     Button3 = caracterIA;
                     return true;
                 }
                 if (string.IsNullOrWhiteSpace(Button9))
                 {
-                    Last = caracterIA;
+                    Last = "Máquina";
                     Button9 = caracterIA;
                     return true;
                 }
                 if ((Button1 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrWhiteSpace(Button3))
                 {
-                    Last = caracterIA;
+                    Last = "Máquina";
                     Button3 = caracterIA;
                     return true;
                 }
                 else if ((Button1 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrWhiteSpace(Button7))
                 {
-                    Last = caracterIA;
+                    Last = "Máquina";
                     Button7 = caracterIA;
                     return true;
                 }
@@ -950,152 +950,152 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Valida primeira coluna
             if ((Button1 == caracterIA) && (Button2 == caracterIA) && string.IsNullOrEmpty(Button3))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button3 = caracterIA;
                 return true;
             }
             if ((Button2 == caracterIA) && (Button3 == caracterIA) && string.IsNullOrEmpty(Button1))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button1 = caracterIA;
                 return true;
             }
             if ((Button1 == caracterIA) && (Button3 == caracterIA) && string.IsNullOrEmpty(Button2))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button2 = caracterIA;
                 return true;
             }
             //Valida segunda coluna
             if ((Button4 == caracterIA) && (Button5 == caracterIA) && string.IsNullOrEmpty(Button6))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button6 = caracterIA;
                 return true;
             }
             if ((Button5 == caracterIA) && (button6 == caracterIA) && string.IsNullOrEmpty(Button4))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button4 = caracterIA;
                 return true;
             }
             if ((Button4 == caracterIA) && (Button6 == caracterIA) && string.IsNullOrEmpty(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
             //Valida terceira coluna
             if ((Button7 == caracterIA) && (Button8 == caracterIA) && string.IsNullOrEmpty(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
             if ((Button8 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button7))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button7 = caracterIA;
                 return true;
             }
             if ((Button7 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button8))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button8 = caracterIA;
                 return true;
             }
             //Valida primeira linha
             if ((Button1 == caracterIA) && (Button4 == caracterIA) && string.IsNullOrEmpty(Button7))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button7 = caracterIA;
                 return true;
             }
             if ((Button4 == caracterIA) && (Button7 == caracterIA) && string.IsNullOrEmpty(Button1))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button1 = caracterIA;
                 return true;
             }
             if ((Button1 == caracterIA) && (Button7 == caracterIA) && string.IsNullOrEmpty(Button4))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button4 = caracterIA;
                 return true;
             }
             //Valida segunda linha
             if ((Button2 == caracterIA) && (Button5 == caracterIA) && string.IsNullOrEmpty(Button8))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button8 = caracterIA;
                 return true;
             }
             if ((Button5 == caracterIA) && (Button8 == caracterIA) && string.IsNullOrEmpty(Button2))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button2 = caracterIA;
                 return true;
             }
             if ((Button2 == caracterIA) && (Button8 == caracterIA) && string.IsNullOrEmpty(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
             //Valida terceira linha
             if ((Button3 == caracterIA) && (Button6 == caracterIA) && string.IsNullOrEmpty(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
             if ((Button6 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button3))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button3 = caracterIA;
                 return true;
             }
             if ((Button3 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button6))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button6 = caracterIA;
                 return true;
             }
             //Valida diagonal 1
             if ((Button1 == caracterIA) && (Button5 == caracterIA) && string.IsNullOrEmpty(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
             if ((Button5 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button1))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button1 = caracterIA;
                 return true;
             }
             if ((Button1 == caracterIA) && (Button9 == caracterIA) && string.IsNullOrEmpty(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
             //Valida diagonal 2
             if ((Button3 == caracterIA) && (Button5 == caracterIA) && string.IsNullOrEmpty(Button7))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button7 = caracterIA;
                 return true;
             }
             if ((Button5 == caracterIA) && (Button7 == caracterIA) && string.IsNullOrEmpty(Button3))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button3 = caracterIA;
                 return true;
             }
             if ((Button3 == caracterIA) && (Button7 == caracterIA) && string.IsNullOrEmpty(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
@@ -1104,21 +1104,21 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Coluna
             if ((Button1 == caracterIA) && string.IsNullOrWhiteSpace(Button2) && string.IsNullOrWhiteSpace(Button3))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button3 = caracterIA;
                 return true;
             }
             //Linha
             if ((Button1 == caracterIA) && string.IsNullOrWhiteSpace(Button4) && string.IsNullOrWhiteSpace(Button7))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button7 = caracterIA;
                 return true;
             }
             //Diagonal
             if ((Button1 == caracterIA) && string.IsNullOrWhiteSpace(Button5) && string.IsNullOrWhiteSpace(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
@@ -1126,14 +1126,14 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Coluna
             if ((Button2 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button3))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button1 = caracterIA;
                 return true;
             }
             //Linha
             if ((Button2 == caracterIA) && string.IsNullOrWhiteSpace(Button5) && string.IsNullOrWhiteSpace(Button8))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
@@ -1141,21 +1141,21 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Coluna
             if ((Button3 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button2))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button1 = caracterIA;
                 return true;
             }
             //Linha
             if ((Button3 == caracterIA) && string.IsNullOrWhiteSpace(Button6) && string.IsNullOrWhiteSpace(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
             //Diagonal
             if ((Button3 == caracterIA) && string.IsNullOrWhiteSpace(Button5) && string.IsNullOrWhiteSpace(Button7))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
@@ -1163,14 +1163,14 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Coluna
             if ((Button4 == caracterIA) && string.IsNullOrWhiteSpace(Button5) && string.IsNullOrWhiteSpace(Button6))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
             //Linha
             if ((Button4 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button7))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button7 = caracterIA;
                 return true;
             }
@@ -1178,27 +1178,27 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Coluna
             if ((Button5 == caracterIA) && string.IsNullOrWhiteSpace(Button4) && string.IsNullOrWhiteSpace(Button6))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button4 = caracterIA;
                 return true;
             }
             //Linha
             if ((Button5 == caracterIA) && string.IsNullOrWhiteSpace(Button2) && string.IsNullOrWhiteSpace(Button8))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button2 = caracterIA;
                 return true;
             }
             //Diagonais
             if ((Button5 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
             if ((Button5 == caracterIA) && string.IsNullOrWhiteSpace(Button3) && string.IsNullOrWhiteSpace(Button7))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button3 = caracterIA;
                 return true;
             }
@@ -1206,13 +1206,13 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Coluna
             if ((Button6 == caracterIA) && string.IsNullOrWhiteSpace(Button4) && string.IsNullOrWhiteSpace(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
             if ((Button6 == caracterIA) && string.IsNullOrWhiteSpace(Button3) && string.IsNullOrWhiteSpace(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
@@ -1220,21 +1220,21 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Coluna
             if ((Button7 == caracterIA) && string.IsNullOrWhiteSpace(Button8) && string.IsNullOrWhiteSpace(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
             //Linha
             if ((Button7 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button4))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button1 = caracterIA;
                 return true;
             }
             //Diagonal
             if ((Button7 == caracterIA) && string.IsNullOrWhiteSpace(Button5) && string.IsNullOrWhiteSpace(Button3))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
@@ -1242,14 +1242,14 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Coluna
             if ((Button8 == caracterIA) && string.IsNullOrWhiteSpace(Button7) && string.IsNullOrWhiteSpace(Button9))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button9 = caracterIA;
                 return true;
             }
             //Linha
             if ((Button8 == caracterIA) && string.IsNullOrWhiteSpace(Button2) && string.IsNullOrWhiteSpace(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
@@ -1257,21 +1257,21 @@ namespace JogoDaVelhaXamarin.ViewModels
             //Coluna
             if ((Button9 == caracterIA) && string.IsNullOrWhiteSpace(Button7) && string.IsNullOrWhiteSpace(Button8))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button7 = caracterIA;
                 return true;
             }
             //Linha
             if ((Button9 == caracterIA) && string.IsNullOrWhiteSpace(Button3) && string.IsNullOrWhiteSpace(Button6))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button3 = caracterIA;
                 return true;
             }
             //Diagonal
             if ((Button9 == caracterIA) && string.IsNullOrWhiteSpace(Button1) && string.IsNullOrWhiteSpace(Button5))
             {
-                Last = caracterIA;
+                Last = "Máquina";
                 Button5 = caracterIA;
                 return true;
             }
